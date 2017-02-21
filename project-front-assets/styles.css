@@ -5,6 +5,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
+h1 { font-size: 52px; }
 
 .page-header {
     width: 100%;
@@ -17,7 +18,20 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
     text-align: center;
 }
-a.btn {
-    padding: 5px 10px; 
-    max-width: 150px;
+.page-header > a.btn {
+    display: inline-block;
+    height: 20px;
+    padding: 10px;
+    vertical-align: middle;
+    color: #fff;
+    line-height: 20px;
+    border: 1px solid #fff;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background .1s linear, color .1s linear;
+}
+.page-header > a.btn:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: #3B4371;
 }
