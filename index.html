@@ -53,17 +53,17 @@
 
         <h4>Table of content</h4>
         <ol>
-            <li><a href="#">Choose your theme and include its stylesheet</a></li>
-            <li><a href="#">Include the plugin's javascript</a></li>
-            <li><a href="#">Set the general settings</a></li>
-            <li><a href="#">Declare and define a notification</a></li>
-            <li><a href="#">Bind a notification to an event</a></li>
-            <li><a href="#">Browser compatibility table</a></li>
+            <li><a href="#stylesheet">Choose your theme and include its stylesheet</a></li>
+            <li><a href="#javascript">Include the plugin's javascript</a></li>
+            <li><a href="#settings">Set the general settings</a></li>
+            <li><a href="#define">Declare and define a notification</a></li>
+            <li><a href="#bind">Bind a notification to an event</a></li>
+            <li><a href="#browser-compatibility">Browser compatibility table</a></li>
         </ol>
 
         <hr>
         
-         <h4>1. Include the stylesheet you want in the HTML head of the page.</h4>
+         <h4 id="stylesheet">1. Include the stylesheet you want in the HTML head of the page.</h4>
          <p><strong>Example:</strong></p>
         
         <pre><code>
@@ -87,7 +87,7 @@
         <p>You have to include only one of them depending on how you want to display the notifications on your website. </p>
 
 
-        <h4> 2. Include the javascript at the end of the body.</h4>
+        <h4 id="javascript"> 2. Include the javascript at the end of the body.</h4>
         <p><strong>Example:</strong></p>
 
         <pre><code>
@@ -107,7 +107,7 @@
         </code></pre>
 
 
-        <h4>3. Set the general settings for all of our notifications (duration in milliseconds) </h4>
+        <h4 id="settings">3. Set the general settings for all of our notifications (duration in milliseconds) </h4>
         <p>This is optional as there is a default value and the duration is manageable through the .display(duration) method.</p>
         <p><strong>Example:</strong></p>
 
@@ -118,7 +118,7 @@
         </code></pre>
 
 
-        <h4>4. Define easily your notifications</h4>
+        <h4 id="define">4. Define easily your notifications</h4>
         <p><strong>Examples:</strong></p>
         <pre><code>
         var successNotif = new Notif("Yay, this message notifies you about the success of whatever!", "success");
@@ -128,7 +128,7 @@
         </pre></code>
 
 
-        <h4>5. Bind the notifications to something.</h4>
+        <h4 id="bind">5. Bind the notifications to something.</h4>
 
         <pre><code> 
         <!-- in your HTML body -->
@@ -144,5 +144,8 @@
         */
         });
         </code></pre>
+
+        <h4 id="browser-compability">Browser compability</h4>
+        <p>Compatible with all major browsers; details coming soon.</p>
     </section>
 </html>
