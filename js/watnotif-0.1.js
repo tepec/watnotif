@@ -1,5 +1,5 @@
 /*!
-Script Notif.js
+Script WatNotif.js
 Author: Rémi Carles
 Creation: 2015/07/10
 Last Modified: 2017/02/20
