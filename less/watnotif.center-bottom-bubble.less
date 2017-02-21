@@ -1,0 +1,199 @@
+/* Style Variant: 
+ *    - horizontal position : center
+ *    - vertical position   : bottom
+ *    - visual effect (anim): bubble and slide-in
+ */   
+
+@base-transition-duration: .15s;
+@base-slideIn-duration: .5s;
+
+#watnotif-wrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 50%; 
+
+    display: block;
+    width: 100%;
+    max-width: 450px;
+    height: 0;
+
+    transform: rotate(180deg);
+
+    margin-right: -225px;
+
+    overflow: visible;
+    z-index: 9999;
+
+    & > .notif {
+        position: relative;
+        top: 0;
+        left: 0; 
+        
+        transform: rotate(180deg);
+
+        margin: 0 0 20px 0; 
+        padding: 10px 20px;
+
+        display: block; 
+        width: 100%; 
+        min-height: 50px;
+
+        cursor: pointer;
+        color: #fff;
+        box-shadow: 0 0 2px 0 rgba(0, 0, 0, .9);
+
+        border-radius: 0;
+
+        overflow: hidden;
+        opacity: 1;
+
+        transition-property: width, top, left, margin, border-radius;
+        transition-duration: @base-transition-duration;
+        transition-delay: @base-slideIn-duration, 0s, @base-slideIn-duration, 0s, @base-slideIn-duration;
+        transition-timing-function: ease-out;
+
+        &:before { 
+            position: absolute; 
+            top: 50%; 
+            left: 0;
+
+            display: block; 
+            width: 50px; 
+            height: 50px;
+
+            margin-top: -25px; 
+            padding: 10px;
+
+            /* Customisation of the font to have nice icons on the left of the notifications */
+            font-family: 'Glyphicons Halflings';
+            font-size: 25px;
+            text-align: center;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 30px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        & > .close-notif {
+            position: absolute; 
+            top: 0; 
+            right: 5px;
+            z-index: 2;
+
+            display: block; 
+            width: 30px; 
+            height: 30px;
+            
+            padding: 5px;
+
+            background: transparent none;
+            border: none;
+            opacity: 0;
+
+            outline: none;
+            font-size: 30px; 
+            font-weight: normal;
+            line-height: 30px;
+
+            transition: opacity .1s ease-out;
+        }
+
+        &:hover > .close-notif { 
+            opacity: .4;
+            &:hover { opacity: 1; } 
+        }
+
+        & > p { 
+            position: relative; 
+
+            display: block;
+            width: 100%;
+            height: 100%;
+
+            padding: 0 12px 0 50px; 
+            margin: 0;
+
+            opacity: 1;
+
+            transition-property: height, opacity, margin;
+            transition-duration: @base-transition-duration;
+            transition-delay: .75s;
+
+            & > a {
+                color: inherit;
+                text-decoration: underline;
+            }
+        }
+
+        &.inactive {
+            top: -100%;
+            left: 50%;
+
+            width: 50px; 
+            height: 50px;
+
+            margin: -50px 0 20px 0;
+
+            border-radius: 25px;
+
+            &.going-out {
+
+                left: 0;
+
+                width: 100%;
+
+                opacity: 0;
+
+                border-radius: 0;
+
+                transition-property: margin, opacity;
+                transition-duration: @base-transition-duration;
+                transition-delay:  0s;
+                transition-timing-function: ease-out;
+
+                & > p {
+                    height: 100%;
+                    margin: 0;
+                    transition: none;
+                }
+            }
+            & > p {
+                height: 0;
+                margin: -10px 0 0 0;
+                opacity: 0;
+                overflow: hidden;
+            }
+        }
+
+        /* Customisation of the background color for all the different types of notifications */
+        &.default   { background-color: #efefef; color: #333; }
+        &.confirmed { background-color: #5bc0de; }
+        &.success   { background-color: #8fb62a; } 
+        &.error     { background-color: #d9534f; } 
+
+        /* Customisation of the left element (icon) on all the different types of notifications */
+        &.confirmed:before { content: "\e125" }
+        &.success:before   { content: "\e013" }
+        &.error:before     { content: "\e101" }
+        &.default:before   { content: "\e122" }
+    }
+}
+
+/* Mobile view */
+@media(max-width: @screen-xs) {
+    #watnotif-wrapper {
+        bottom: 0;
+        & > .notif {
+            margin: 0;
+            & > .close-notif {
+                opacity: .4;
+            }
+        }
+    }
+}
+
+/* IE10+ specific styles go here */  
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
+    #watnotif-wrapper > .notif { transition: none; }
+    #watnotif-wrapper > .notif > p { transition-delay: 0s; }
+}
