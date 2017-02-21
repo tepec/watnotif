@@ -57,7 +57,7 @@ You have to include only one of them depending on how you want to display the no
   <!-- your body -->
   
   <!-- the Notif plugin script -->
-  <script type="text/javascript" src="/path/to/notif.min.js" />
+  <script type="text/javascript" src="/path/to/notif.min.js"></script>
   </body>
 </html>
 ```
