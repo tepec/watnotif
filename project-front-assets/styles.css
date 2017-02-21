@@ -1,10 +1,23 @@
+html, body { margin: 0; padding: 0; }
 body {
     font-family: 'Open Sans', sans-serif;
 }
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
 
 .page-header {
+    width: 100%;
+    padding: 40px; 
+
     background: #F3904F; 
     background: -webkit-linear-gradient(to left, #F3904F , #3B4371); 
     background: linear-gradient(to left, #F3904F , #3B4371); 
+
     color: #fff;
+    text-align: center;
+}
+a.btn {
+    padding: 5px 10px; 
+    max-width: 150px;
 }
