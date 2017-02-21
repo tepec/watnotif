@@ -39,9 +39,9 @@ h1 { font-size: 52px; }
 .project-tagline, .page-content {
     width: 100%;
     max-width: 1240px;
+    margin: 10px auto;
 }
 .page-content {
-    margin: 10px auto;
     padding: 0 20px;
 }
 .page-content > h4 {
@@ -53,4 +53,10 @@ hr {
     margin: 40px; 
     border-bottom: 1px solid #ccc;
     border-top: none;
+}
+
+pre {
+    margin: 10px;
+    padding: 0 10px;
+    background-color: #efefef;
 }
