@@ -22,6 +22,7 @@ h1 { font-size: 52px; }
     display: inline-block;
     height: 20px;
     padding: 10px;
+    margin: 0 10px;
     vertical-align: middle;
     color: #fff;
     line-height: 20px;
@@ -34,4 +35,12 @@ h1 { font-size: 52px; }
     cursor: pointer;
     background-color: #fff;
     color: #3B4371;
+}
+.project-tagline, .page-content {
+    width: 100%;
+    max-width: 1240px;
+}
+.page-content {
+    margin: 10px 0;
+    padding: 0 20px;
 }
