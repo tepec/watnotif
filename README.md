@@ -63,7 +63,7 @@ You have to include only one of them depending on how you want to display the no
 ```
 
 
-## 3. We set the general settings for all of our notifications (duration in milliseconds) 
+## 3. Set the general settings for all of our notifications (duration in milliseconds) 
 This is optional as there is a default value and the duration is manageable through the .display(duration) method.
 
 **Example: **
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() { // make sure the DOM 
 ```
 
 
-## 4. We define all our notifications 
+## 4. Define easily your notifications 
 **Examples: **
 
 ```javascript 
@@ -86,7 +86,7 @@ var defaultNotif = new Notif("This message is just meant to say hi; so \"hi!\"",
 ```
 
 
-## 5. We bind the notifications to something.
+## 5. Bind the notifications to something.
 
 ```html 
 <!-- in your HTML body -->
