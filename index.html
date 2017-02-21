@@ -7,135 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="/watnotif/assets/css/style.css?v=9a42253f5498cfa437bffb2d86ab22254b10d26d">
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">watnotif</h1>
+      <h1 class="project-name">WatNotif.js</h1>
       <h2 class="project-tagline">WatNotif is an elegant pure JS & CSS notification plugin with configurable timer, keep-on-hover and close built-in functionalities.</h2>
       
-        <a href="https://github.com/tepec/watnotif" class="btn">View on GitHub</a>
-        <a href="/examples/index.html" class="btn">Demos</a>
-        <a href="#" class="btn">Download</a>
+        <p>Coming Soon</p>
       
     </section>
 
-    <section class="main-content">
-      <h1 id="watnotifjs">WatNotif.js</h1>
-<p>WatNotif is an elegant pure JS &amp; CSS stackable notifications plugin with configurable timer, keep-on-hover and close built-in functionalities.</p>
-
-<h2 id="coming-soon-list">COMING SOON List</h2>
-
-<blockquote>
-  <ul>
-    <li>Put at least a few demo/examples</li>
-    <li>Add note on browser compatibility</li>
-    <li>Make this page prettier</li>
-    <li>Create a module for notification center</li>
-    <li>Add a few more themes</li>
-    <li>Dedicated fonticon?</li>
-  </ul>
-</blockquote>
-
-<hr />
-
-<h2 id="1-include-the-stylesheet-you-want-in-the-html-head-of-the-page">1. Include the stylesheet you want in the HTML head of the page.</h2>
-
-<p><strong>Example:</strong></p>
-
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
-    
-    <span class="c">&lt;!-- the Notif stylesheet you choosed --&gt;</span>
-    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">type=</span><span class="s">"text/css"</span> <span class="na">href=</span><span class="s">"/path/to/notif.min.css"</span> <span class="nt">/&gt;</span>
-    
-    <span class="c">&lt;!-- your own stylesheets --&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-  <span class="c">&lt;!-- your body --&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre>
-</div>
-
-<p><em>Note: There are different stylesheets, based on :</em></p>
-
-<ul>
-  <li>horizontal positioning</li>
-  <li>vertical positioning</li>
-  <li>animation &amp; transition</li>
-</ul>
-
-<p>You have to include only one of them depending on how you want to display the notifications on your website.</p>
-
-<h2 id="2-include-the-javascript-at-the-end-of-the-body">2. Include the javascript at the end of the body.</h2>
-<p><strong>Example:</strong></p>
-
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
-<span class="nt">&lt;html&gt;</span>
-  <span class="nt">&lt;head&gt;</span>
-    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span> <span class="nt">/&gt;</span>
-    <span class="c">&lt;!-- your meta, styles, favico, and so on --&gt;</span>
-  <span class="nt">&lt;/head&gt;</span>
-  <span class="nt">&lt;body&gt;</span>
-  <span class="c">&lt;!-- your body --&gt;</span>
-  
-  <span class="c">&lt;!-- the Notif plugin script --&gt;</span>
-  <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"/path/to/notif.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-  <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</code></pre>
-</div>
-
-<h2 id="3-set-the-general-settings-for-all-of-our-notifications-duration-in-milliseconds">3. Set the general settings for all of our notifications (duration in milliseconds)</h2>
-<p>This is optional as there is a default value and the duration is manageable through the .display(duration) method.</p>
-
-<p>**Example: **</p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'DOMContentLoaded'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span> <span class="c1">// make sure the DOM is fully loaded before starting anything</span>
-  <span class="nx">Notif</span><span class="p">.</span><span class="nx">setWrapperOptions</span><span class="p">({</span> <span class="na">duration</span><span class="p">:</span> <span class="mi">4000</span> <span class="p">});</span>
-<span class="p">},</span> <span class="kc">false</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<h2 id="4-define-easily-your-notifications">4. Define easily your notifications</h2>
-<p>**Examples: **</p>
-
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">successNotif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Notif</span><span class="p">(</span><span class="s2">"Yay, this message notifies you about the success of whatever!"</span><span class="p">,</span> <span class="s2">"success"</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">errorNotif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Notif</span><span class="p">(</span><span class="s2">"Oups, this is a notification you usually hope to not display."</span><span class="p">,</span> <span class="s2">"error"</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">confirmedNotif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Notif</span><span class="p">(</span><span class="s2">"Let's just confirm that whatever happened."</span><span class="p">,</span> <span class="s2">"confirmed"</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">defaultNotif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Notif</span><span class="p">(</span><span class="s2">"This message is just meant to say hi; so \"hi!\""</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">);</span>
-</code></pre>
-</div>
-
-<h2 id="5-bind-the-notifications-to-something">5. Bind the notifications to something.</h2>
-
-<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="c">&lt;!-- in your HTML body --&gt;</span>
-<span class="nt">&lt;button</span> <span class="na">id=</span><span class="s">"my-button"</span><span class="nt">&gt;</span>Gimme my notif<span class="nt">&lt;/button&gt;</span>
-</code></pre>
-</div>
-<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="c1">// In your own javascript</span>
-<span class="kd">var</span> <span class="nx">myNotif</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Notif</span><span class="p">(</span><span class="s1">'Hey, what about this very nice notification, with a &lt;a href="#"&gt;link&lt;/a&gt; and everything?'</span><span class="p">,</span> <span class="s2">"default"</span><span class="p">);</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'my-button'</span><span class="p">).</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
-  <span class="nx">myNotif</span><span class="p">.</span><span class="nx">display</span><span class="p">(</span><span class="mi">3500</span><span class="p">);</span>
-  <span class="cm">/* You could also chain everything if it's a one time notification, such as:
-   * new Notif('This is a one time notification, so no need to keep it in a JS variable.', "confirmed").display(4000);
-   */</span>
-<span class="p">});</span>
-</code></pre>
-</div>
-
-
-      <footer class="site-footer">
-        
-          <span class="site-footer-owner"><a href="https://github.com/tepec/watnotif">watnotif</a> is maintained by <a href="https://github.com/tepec">tepec</a>.</span>
-        
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a>.</span>
-      </footer>
-    </section>
-
-    
-  </body>
 </html>
