@@ -1,0 +1,10 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.page-header {
+    background: #F3904F; 
+    background: -webkit-linear-gradient(to left, #F3904F , #3B4371); 
+    background: linear-gradient(to left, #F3904F , #3B4371); 
+    color: #fff;
+}
