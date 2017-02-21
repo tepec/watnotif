@@ -41,6 +41,16 @@ h1 { font-size: 52px; }
     max-width: 1240px;
 }
 .page-content {
-    margin: 10px 0;
+    margin: 10px auto;
     padding: 0 20px;
+}
+.page-content > h4 {
+    font-size: 32px;
+    color: #3B4371;
+}
+
+hr { 
+    margin: 40px; 
+    border-bottom: 1px solid #ccc;
+    border-top: none;
 }

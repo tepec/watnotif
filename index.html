@@ -67,45 +67,47 @@
          <p><strong>Example:</strong></p>
         
         <pre><code>
-        <!DOCTYPE html>
-        <html>
-            <head>
-                <meta charset="UTF-8" />
-                
-                <!-- the Notif stylesheet you choosed -->
-                <link rel="stylesheet" type="text/css" href="/path/to/watnotif.min.css" />
-                
-                <!-- your own stylesheets -->
-            </head>
-            <body>
-            <!-- your body -->
-            </body>
-        </html>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8" /&gt;
+        
+        &lt;!-- the Notif stylesheet you choosed --&gt;
+        &lt;link rel="stylesheet" type="text/css" href="/path/to/watnotif.min.css" /&gt;
+        
+        &lt;!-- your own stylesheets --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;!-- your body --&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
         </code></pre>
 
         <p>Note: There are different stylesheets, based on horizontal positioning, vertical positioning and animation effect. By convention, a CSS file will be named <code>watnotif.<horizontal position>-<vertical position>-<effect>.css</code>. 
         <p>You have to include only one of them depending on how you want to display the notifications on your website. </p>
 
+        <hr>
 
         <h4 id="javascript"> 2. Include the javascript at the end of the body.</h4>
         <p><strong>Example:</strong></p>
 
         <pre><code>
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <meta charset="UTF-8" />
-            <!-- your meta, styles, favico, and so on -->
-        </head>
-        <body>
-        <!-- your body -->
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8" /&gt;
+        &lt;!-- your meta, styles, favico, and so on --&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- your body --&gt;
         
-        <!-- the Notif plugin script -->
-        <script type="text/javascript" src="/path/to/notif.min.js"></script>
-        </body>
-        </html>
+        &lt;!-- the Notif plugin script --&gt;
+        &lt;script type="text/javascript" src="/path/to/notif.min.js"&gt;&lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
         </code></pre>
 
+        <hr>
 
         <h4 id="settings">3. Set the general settings for all of our notifications (duration in milliseconds) </h4>
         <p>This is optional as there is a default value and the duration is manageable through the .display(duration) method.</p>
@@ -117,6 +119,7 @@
         }, false);
         </code></pre>
 
+        <hr>
 
         <h4 id="define">4. Define easily your notifications</h4>
         <p><strong>Examples:</strong></p>
@@ -127,6 +130,7 @@
         var defaultNotif = new Notif("This message is just meant to say hi; so \"hi!\"", "default");
         </pre></code>
 
+        <hr>
 
         <h4 id="bind">5. Bind the notifications to something.</h4>
 
@@ -136,7 +140,7 @@
         </code></pre>
         <pre><code> 
         // In your own javascript
-        var myNotif = new Notif('Hey, what about this very nice notification, with a <a href="#">link</a> and everything?', "default");
+        var myNotif = new Notif('Hey, what about this very nice notification, with a &lt;a href="#"&gt;link&lt;/a&gt; and everything?', "default");
         document.getElementById('my-button').addEventListener('click', function(e) {
         myNotif.display(3500);
         /* You could also chain everything if it's a one time notification, such as:
