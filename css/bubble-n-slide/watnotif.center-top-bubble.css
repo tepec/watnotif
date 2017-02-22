@@ -30,7 +30,7 @@
         top: 0;
         left: 0;
         
-        margin: 0 0 20px -50px; 
+        margin: 0 0 20px 0; 
         padding: 10px 20px;
 
         display: block; 
@@ -138,7 +138,7 @@
         }
         #watnotif-wrapper > .notif.inactive.going-out {
 
-            right: 0;
+            left: 0;
 
             width: 100%;
 
