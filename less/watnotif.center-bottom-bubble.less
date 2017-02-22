@@ -24,6 +24,12 @@
     overflow: visible;
     z-index: 9999;
 
+    &, & *, 
+    #watnotif-wrapper *:before, 
+    #watnotif-wrapper *:after {
+        box-sizing: border-box;
+    }
+
     & > .notif {
         position: relative;
         top: 0;

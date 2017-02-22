@@ -1,0 +1,70 @@
+html, body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; width: 100%; height: 100%; }
+body { background: #efefef; }
+#container { display: table; width: 100%; height: 100%; }
+#container > * { display: table-cell; vertical-align: middle; }
+*, 
+* :before, 
+*:after {
+    box-sizing: border-box;
+}
+
+.centered-block { 
+    display: block;
+    width: 100%; 
+    max-width: 980px; 
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 40px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, .1);
+}
+.summary {
+    text-align: left;
+}
+h1 { text-align: center; font-size: 52px; font-weight: normal; }
+hr { 
+    border-top: none;
+    border-bottom: 1px solid #aaa;
+    background: transparent;
+    margin: 40px 0; 
+}
+.btn {
+    display: inline-block;
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 20px;
+    margin: 10px; 
+    padding: 0 20px;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    color: #333;
+}
+.btn:hover:after {
+    content: " ";
+    position: absolute;
+    top: 0; left: 0;
+    display: block; 
+    width: 100%; height: 100%;
+    background-color: rgba(255,255,255,.2);
+    border-radius: 20px;
+}
+.btn.confirmed { background-color: #5bc0de;}
+.btn.success { background-color: #8fb62a;}
+.btn.error { background-color: #d9534f;}
+.btn:not(.default) { color: #fff; }
+.btn:focus { 
+    outline: none;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,.5);
+}
+.btn:active:after {
+    background-color: rgba(0,0,0,.2);
+}
+code {
+    background-color: #efefef;
+    padding: 2px;
+}

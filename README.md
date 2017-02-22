@@ -63,7 +63,11 @@ You have to include only one of them depending on how you want to display the no
 ```
 
 
+<<<<<<< HEAD
+## 3. Set the general settings for all of your notifications (duration in milliseconds) 
+=======
 ## 3. Set the general settings for all of our notifications (duration in milliseconds) 
+>>>>>>> gh-pages
 This is optional as there is a default value and the duration is manageable through the .display(duration) method.
 
 **Example: **
@@ -75,7 +79,11 @@ document.addEventListener('DOMContentLoaded', function() { // make sure the DOM 
 ```
 
 
+<<<<<<< HEAD
+## 4. Define notifications 
+=======
 ## 4. Define easily your notifications 
+>>>>>>> gh-pages
 **Examples: **
 
 ```javascript 
