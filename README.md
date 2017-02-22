@@ -1,7 +1,7 @@
 # WatNotif.js
 WatNotif is an elegant pure JS &amp; CSS stackable notifications plugin with configurable timer, keep-on-hover and close built-in functionalities.
 
-## TODO List 
+## COMING SOON List 
 
 > * Put at least a few demo/examples
 > * Add note on browser compatibility
@@ -57,13 +57,17 @@ You have to include only one of them depending on how you want to display the no
   <!-- your body -->
   
   <!-- the Notif plugin script -->
-  <script type="text/javascript" src="/path/to/notif.min.js" />
+  <script type="text/javascript" src="/path/to/notif.min.js"></script>
   </body>
 </html>
 ```
 
 
+<<<<<<< HEAD
 ## 3. Set the general settings for all of your notifications (duration in milliseconds) 
+=======
+## 3. Set the general settings for all of our notifications (duration in milliseconds) 
+>>>>>>> gh-pages
 This is optional as there is a default value and the duration is manageable through the .display(duration) method.
 
 **Example: **
@@ -75,7 +79,11 @@ document.addEventListener('DOMContentLoaded', function() { // make sure the DOM 
 ```
 
 
+<<<<<<< HEAD
 ## 4. Define notifications 
+=======
+## 4. Define easily your notifications 
+>>>>>>> gh-pages
 **Examples: **
 
 ```javascript 

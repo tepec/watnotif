@@ -76,7 +76,10 @@ Notif.prototype.init = function init() {
             elem = e.target.getAttribute('data-role') && e.target.getAttribute('data-role') == 'notification' ? e.target : checkPath(e.target);
             if(elem) {
                 elem.className += " inactive going-out";
-                setTimeout(function() { Notif.prototype.getWrapper().removeChild(elem); }, 300);
+                setTimeout(function() { 
+                    if(elem.parentNode == Notif.prototype.getWrapper())
+                        Notif.prototype.getWrapper().removeChild(elem); 
+                }, 300);
                 e.stopPropagation();
             }
             else 
