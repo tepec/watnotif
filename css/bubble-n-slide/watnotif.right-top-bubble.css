@@ -2,7 +2,13 @@
  *    - horizontal position : right
  *    - vertical position   : top 
  *    - visual effect (anim): bubble and slide-in
- */   
+ */
+#watnotif-wrapper,
+#watnotif-wrapper *, 
+#watnotif-wrapper *:before, 
+#watnotif-wrapper *:after {
+  box-sizing: border-box;
+}
 
 #watnotif-wrapper {
     position: fixed;
@@ -22,7 +28,7 @@
         right: 0; 
         
         margin: 0 0 20px -50px; 
-        padding: 10px 20px;
+        padding: 10px;
 
         display: block; 
         width: 100%; 
@@ -54,13 +60,15 @@
             margin-top: -25px; 
             padding: 10px;
 
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+
             /* Example of customisation to have nice icons on the left of the notifications 
              * font-family: 'Glyphicons Halflings';
              * font-size: 25px;
-             * text-align: center;
              * font-style: normal;
              * font-weight: 400;
-             *line-height: 30px;
              */
         }
 
@@ -97,7 +105,6 @@
             position: relative; 
 
             display: block;
-            width: 100%;
             height: 100%;
 
             padding: 0 12px 0 50px; 
