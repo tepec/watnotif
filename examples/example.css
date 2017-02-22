@@ -63,7 +63,7 @@ hr {
     opacity: 1;
 }
 .btn.confirmed { background: linear-gradient(135deg, #59caff 0%,#26adec 100%); }
-.btn.success { background: linear-gradient(135deg, #59ff5c 0%,#26ec2a 100%); }
+.btn.success { background: linear-gradient(135deg, #92db7b 0%,#70cf51 100%); }
 .btn.error { background: linear-gradient(135deg, #ff6159 0%,#ec3026 100%); }
 .btn:not(.default) { color: #fff; }
 .btn:focus { 
