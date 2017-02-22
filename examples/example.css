@@ -1,5 +1,5 @@
 html, body { font-family: 'Open Sans', sans-serif; margin: 0; padding: 0; width: 100%; height: 100%; }
-body { background: #efefef; }
+body { background: linear-gradient(135deg, #efefef 0%,#fefefe 100%);; }
 #container { display: table; width: 100%; height: 100%; }
 #container > * { display: table-cell; vertical-align: middle; }
 *, 
@@ -37,29 +37,38 @@ hr {
     border-radius: 20px;
     margin: 10px; 
     padding: 0 20px;
-    background: #ccc;
+    background: linear-gradient(135deg, #dadada 0%,#cbcbcb 100%);
     border: none;
     cursor: pointer;
     font-size: 14px;
     text-decoration: none;
     color: #333;
 }
-.btn:hover:after {
+.btn:after {
     content: " ";
     position: absolute;
-    top: 0; left: 0;
+    top: 50%; left: 50%;
+    width: 0; height: 0;
     display: block; 
-    width: 100%; height: 100%;
     background-color: rgba(255,255,255,.2);
     border-radius: 20px;
+    opacity: 0;
+    transition-property: width, height, top, left, opacity;
+    transition-duration: .1s;
+    transition-timing-function: ease-out;
 }
-.btn.confirmed { background-color: #5bc0de;}
-.btn.success { background-color: #8fb62a;}
-.btn.error { background-color: #d9534f;}
+.btn:hover:after {
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    opacity: 1;
+}
+.btn.confirmed { background: linear-gradient(135deg, #59caff 0%,#26adec 100%); }
+.btn.success { background: linear-gradient(135deg, #59ff5c 0%,#26ec2a 100%); }
+.btn.error { background: linear-gradient(135deg, #ff6159 0%,#ec3026 100%); }
 .btn:not(.default) { color: #fff; }
 .btn:focus { 
     outline: none;
-    box-shadow: 0 0 2px 2px rgba(0,0,0,.5);
+    /*box-shadow: 0 0 2px 2px rgba(0,0,0,.5);*/
 }
 .btn:active:after {
     background-color: rgba(0,0,0,.2);

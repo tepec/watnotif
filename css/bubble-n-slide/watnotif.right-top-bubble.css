@@ -36,7 +36,7 @@
 
         cursor: pointer;
         color: #fff;
-        box-shadow: 0 0 2px 0 rgba(0, 0, 0, .9);
+        box-shadow: 0 0 1px 0 rgba(0, 0, 0, .3);
 
         border-radius: 0;
 
@@ -165,10 +165,10 @@
         #watnotif-wrapper > .notif.default:before   { content: ":|" }
 
         /* Customisation of the background color of the notifications depending on their type */
-        #watnotif-wrapper > .notif.default   { background-color: #efefef; color: #333; }
-        #watnotif-wrapper > .notif.confirmed { background-color: #5bc0de; }
-        #watnotif-wrapper > .notif.success   { background-color: #8fb62a; } 
-        #watnotif-wrapper > .notif.error     { background-color: #d9534f; } 
+        #watnotif-wrapper > .notif.default   { background: linear-gradient(135deg, #dadada 0%,#cbcbcb 100%); color: #333; }
+        #watnotif-wrapper > .notif.confirmed { background: linear-gradient(135deg, #59caff 0%,#26adec 100%); }
+        #watnotif-wrapper > .notif.success   { background:linear-gradient(135deg, #59ff5c 0%,#26ec2a 100%); } 
+        #watnotif-wrapper > .notif.error     { background: linear-gradient(135deg, #ff6159 0%,#ec3026 100%); } 
 
         /* Example of customisation to have nice icons on the left of the notifications (using Glyphicons) 
          * #watnotif-wrapper > .notif.confirmed:before { content: "\e125" }

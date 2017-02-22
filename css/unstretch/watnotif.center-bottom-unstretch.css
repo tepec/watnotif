@@ -1,7 +1,7 @@
 /* Style Variant: 
- *    - horizontal position : left
+ *    - horizontal position : center
  *    - vertical position   : bottom 
- *    - visual effect (anim): bubble and slide-in
+ *    - visual effect (anim): unstretch
  */   
 #watnotif-wrapper,
 #watnotif-wrapper *, 
@@ -13,7 +13,7 @@
 #watnotif-wrapper {
     position: fixed;
     bottom: 20px;
-    left: 10px; 
+    right: 50%; 
 
     display: block;
     width: 100%;
@@ -21,35 +21,36 @@
     height: 0;
 
     transform: rotate(180deg);
+    
+    margin-right: -225px;
 
     overflow: visible;
     z-index: 9999;
 }
     #watnotif-wrapper > .notif {
         position: relative;
-        right: 0; 
+        top: 0;
+        left: 0;
         
-        margin: 0 0 20px -50px; 
+        margin: 0 0 20px 0; 
         padding: 10px 20px;
+    
+        transform: rotate(180deg);
 
         display: block; 
         width: 100%; 
         min-height: 50px;
 
-        transform: rotate(180deg);
-
         cursor: pointer;
         color: #fff;
         box-shadow: 0 0 2px 0 rgba(0, 0, 0, .9);
 
-        border-radius: 0;
-
         overflow: hidden;
         opacity: 1;
 
-        transition-property: width, right, margin, border-radius;
+        transition-property: width, left;
         transition-duration: .15s;
-        transition-delay: .5s, .5s, 0s, .5s;
+        transition-delay: 0s;
         transition-timing-function: ease-out;
     }
         #watnotif-wrapper > .notif:before { 
@@ -68,11 +69,20 @@
             line-height: 30px;
             font-weight: bold;
 
+            opacity: 1;
+            transition-property: top, opacity;
+            transition-delay: 0s;
+            transition-duration: .25s;
+
             /* Example of customisation to have nice icons on the left of the notifications 
              * font-family: 'Glyphicons Halflings';
              * font-size: 25px;
              * font-weight: 400;
              */
+        }
+        #watnotif-wrapper > .notif.inactive:not(.going-out):before {
+            opacity: 0;
+            top: 60%;
         }
 
         #watnotif-wrapper > .notif > .close-notif {
@@ -118,7 +128,7 @@
 
             transition-property: height, opacity, margin;
             transition-duration: .15s;
-            transition-delay: .75s;
+            transition-delay: .1s;
 
         }
         #watnotif-wrapper > .notif > p > a {
@@ -127,34 +137,34 @@
         }
 
         #watnotif-wrapper > .notif.inactive {
-            right: -100%;
-
-            width: 50px; 
+            top: -100%;
+            left: -10%;
+            
+            width: 120%; 
+            max-width: 550px;
             height: 50px;
 
             margin: 0 0 20px 0;
-
-            border-radius: 25px;
         }
         #watnotif-wrapper > .notif.inactive.going-out {
 
-            right: 0;
-
-            width: 100%;
-
+            left: 50%;
+            width: 0;
             opacity: 0;
 
-            border-radius: 0;
-
-            transition-property: margin, opacity;
-            transition-duration: .15s;
-            transition-delay:  0s;
-            transition-timing-function: ease-out;
+            transition-property: left, width, opacity, height;
+            transition-duration: .15s, .15s, .1s, .15s;
+            transition-delay:  .1s, .1s, .25s, 0s;
+            transition-timing-function: linear;
         }
         #watnotif-wrapper > .notif.inactive.going-out > p {
+            opacity: 0;
             height: 100%;
             margin: 0;
-            transition: none;
+            transition-property: opacity;
+            transition-delay: 0s;
+            transition-duration: .15s;
+            transition-timing-function: ease-out;
         }
         #watnotif-wrapper > .notif.inactive > p {
             height: 0;
@@ -184,8 +194,7 @@
 /* Mobile view */
 @media(max-width: 450px) {
     #watnotif-wrapper {
-        bottom: 0;
-        left: 0;
+        top: 0;
     }
         #watnotif-wrapper > .notif {
             margin: 0;
