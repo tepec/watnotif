@@ -1,9 +1,9 @@
 # WatNotif.js
 WatNotif is an elegant pure JS &amp; CSS stackable notifications plugin with configurable timer, keep-on-hover and close built-in functionalities.
 
-[See Plugin's website](https://tepec.github.io/watnotif/)
+**[See Plugin's website](https://tepec.github.io/watnotif/)**
 
-[See demos](https://tepec.github.io/watnotif/examples/top-right-bubble.html)
+**[See demos](https://tepec.github.io/watnotif/examples/top-right-bubble.html)**
 
 ## COMING SOON List 
 
@@ -11,7 +11,7 @@ WatNotif is an elegant pure JS &amp; CSS stackable notifications plugin with con
 > * Add note on browser compatibility
 > * ~~Make this page prettier~~ [Done!]
 > * Create a module for notification center
-> * Add a few more themes
+> * ~~Add a few more themes~~ [Done!]
 > * Dedicated fonticon?
 
 ***
