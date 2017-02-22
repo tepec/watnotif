@@ -12,7 +12,7 @@
 
 #watnotif-wrapper {
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     right: 10px; 
 
     display: block;

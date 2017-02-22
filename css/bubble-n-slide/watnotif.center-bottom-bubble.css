@@ -1,7 +1,7 @@
 /* Style Variant: 
  *    - horizontal position : center
- *    - vertical position   : bottom
- *    - visual effect (anim): bubble and slide-in
+ *    - vertical position   : top 
+ *    - visual effect (anim): bubble and slideIn
  */   
 #watnotif-wrapper,
 #watnotif-wrapper *, 
@@ -13,30 +13,33 @@
 #watnotif-wrapper {
     position: fixed;
     bottom: 20px;
-    right: 10px; 
+    right: 50%; 
 
     display: block;
     width: 100%;
     max-width: 450px;
     height: 0;
-    
+
     transform: rotate(180deg);
+    
+    margin-right: -225px;
 
     overflow: visible;
     z-index: 9999;
 }
     #watnotif-wrapper > .notif {
         position: relative;
-        right: 0; 
+        top: 0;
+        left: 0;
         
-        margin: 0 0 20px -50px; 
+        margin: 0 0 20px 0; 
         padding: 10px 20px;
+    
+        transform: rotate(180deg);
 
         display: block; 
         width: 100%; 
         min-height: 50px;
-
-        transform: rotate(180deg);
 
         cursor: pointer;
         color: #fff;
@@ -47,9 +50,9 @@
         overflow: hidden;
         opacity: 1;
 
-        transition-property: width, right, margin, border-radius;
+        transition-property: width, top, left, margin, border-radius;
         transition-duration: .15s;
-        transition-delay: .5s, .5s, 0s, .5s;
+        transition-delay: .5s, 0s, .5s, 0s, .5s;
         transition-timing-function: ease-out;
     }
         #watnotif-wrapper > .notif:before { 
@@ -127,18 +130,19 @@
         }
 
         #watnotif-wrapper > .notif.inactive {
-            right: -100%;
-
+            top: -100%;
+            left: 50%;
+            
             width: 50px; 
             height: 50px;
 
-            margin: 0 0 20px 0;
+            margin: -50px 0 20px 0;
 
             border-radius: 25px;
         }
         #watnotif-wrapper > .notif.inactive.going-out {
 
-            right: 0;
+            left: 0;
 
             width: 100%;
 
@@ -184,7 +188,7 @@
 /* Mobile view */
 @media(max-width: 450px) {
     #watnotif-wrapper {
-        bottom: 0;
+        top: 0;
     }
         #watnotif-wrapper > .notif {
             margin: 0;
