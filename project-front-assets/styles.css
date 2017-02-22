@@ -10,6 +10,8 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
 }
+ul { list-style-type: square; }
+ul ul { list-style-type: disc; }
 h1 { font-size: 52px; }
 
 .page-header {
@@ -25,7 +27,7 @@ h1 { font-size: 52px; }
 }
 .page-header > a.btn {
     display: inline-block;
-    height: 20px;
+    height: 40px;
     padding: 10px;
     margin: 0 10px;
     vertical-align: middle;
@@ -49,10 +51,18 @@ h1 { font-size: 52px; }
 .page-content {
     padding: 0 20px;
 }
-.page-content > h4 {
+.page-content h4 {
     font-size: 32px;
     color: #3B4371;
 }
+
+.block {
+    display: inline-block;
+    width: 30%;
+    vertical-align: top;
+}
+.block.one { width: 40%; }
+.block.two, .block.three { width: 28%; }
 
 hr { 
     margin: 40px; 
