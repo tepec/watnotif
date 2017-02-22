@@ -75,3 +75,4 @@ pre {
     padding: 0 10px;
     background-color: #efefef;
 }
+.strikethrough { text-decoration: line-through; }
