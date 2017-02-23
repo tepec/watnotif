@@ -192,7 +192,7 @@
          */
 
 /* Mobile view */
-@media(max-width: 450px) {
+@media(max-width: 520px) {
     #watnotif-wrapper {
         top: 0;
     }

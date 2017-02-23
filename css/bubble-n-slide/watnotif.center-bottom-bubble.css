@@ -186,9 +186,11 @@
          */
 
 /* Mobile view */
-@media(max-width: 450px) {
+@media(max-width: 520px) {
     #watnotif-wrapper {
         top: 0;
+        width: 100%;
+        max-width: 100%;
     }
         #watnotif-wrapper > .notif {
             margin: 0;
