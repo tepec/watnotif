@@ -1,0 +1,14 @@
+@import '../common.less';
+@import '../effects/bubble-n-slide.less';
+@import '../positions/top.less';
+@import '../positions/center.less';
+
+#notif-wrapper > .notif {
+    top: 0;
+    margin-left: -25px;
+    &.inactive {
+        top: -100%;
+        right: -50%; 
+        margin-left: -25px;
+    }
+}

@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() { // When the DOM is fi
         btn.onclick = function(e) {
             getRandomNotification(
                 this.getAttribute('data-notif-type')) // to get the type of the notification we want to show 
-                    .display(4000);
+                    .display(9000);
         };
     }
 });

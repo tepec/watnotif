@@ -1,0 +1,53 @@
+@import '../../variables.less';
+
+@transition-duration : .15s;
+@transition-delay    : .5s;
+
+#watnotif-wrapper  > .notif {
+    right: -50px; 
+    
+    margin: 0 0 20px -50px; 
+
+    border-radius: 0;
+
+    transition-property: top, margin, width, right, border-radius;
+    transition-duration: @transition-duration;
+    transition-delay:  0s, 0s,  @transition-delay, @transition-delay, @transition-delay;
+    transition-timing-function: ease-out;
+    &.inactive {
+        right: -100%;
+
+        width: 50px; 
+        height: 50px;
+
+        margin: 0 0 20px 0;
+        
+        border-radius: 25px;
+        &.going-out {
+            width: 100%;
+            opacity: 0;
+            border-radius: 0;
+            transition-property: margin, opacity;
+            transition-duration: @transition-duration;
+            transition-delay: 0s;
+            transition-timing-function: ease-out;
+        }
+    }
+}
+/* Mobile view */
+@media (max-width: @mobile-max-width) {
+	#watnotif-wrapper {
+		& > .notif {
+			margin: 0;
+			& > .close-notif {
+				opacity: .4;
+                transition-property: opacity;
+                transition-duration: @transition-duration;
+                transition-delay: @transition-delay;
+			}
+            &.inactive > .close-notif {
+                opacity: 0;
+            }
+		}
+	}
+}
