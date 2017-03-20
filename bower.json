@@ -1,0 +1,32 @@
+{
+  "name": "watnotif",
+  "homepage": "https://tepec.github.io/watnotif/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tepec/watnotif.git"
+  },
+  "description": "a pure JS & CSS stackable notifications plugin, with configurable timer, 'keep-on-hover' and 'close' built-in functionalities",
+  "main": "dist/js/watnotif-1.0.js, dist/css/bubble-n-slide/watnotif.right-top-bubble.css",
+  "moduleType": "globals",
+  "keywords": [
+    "notifications",
+    "plugin",
+    "pure",
+    "JS",
+    "css",
+    "less",
+    "sass",
+    "no-dependancy",
+    "alerts"
+  ],
+  "authors": [
+    "Rémi Carles"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "examples",
+    "index.html",
+    "README.md", 
+    "project-front-assets"
+  ]
+}
