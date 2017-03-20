@@ -8,6 +8,7 @@ WatNotif is an elegant pure JS &amp; CSS stackable notifications plugin with con
 ## COMING SOON List 
 
 > * ~~Put at least a few demo/examples~~ [Done!]
+> * ~~Add SASS files~~ [Done!]
 > * Add note on browser compatibility
 > * ~~Make this page prettier~~ [Done!]
 > * Create a module for notification center
@@ -70,6 +71,8 @@ You have to include only one of them depending on how you want to display the no
 ## 3. Set the general settings for all of your notifications (duration in milliseconds) 
 
 This is optional as there is a default value and the duration is manageable through the .display(duration) method.
+
+If you set the duration value to less than 1 millisecond, it won't be dismissed automatically
 
 **Example: **
 
