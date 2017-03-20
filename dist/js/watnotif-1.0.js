@@ -2,9 +2,9 @@
 Script WatNotif.js
 Author: Rémi Carles
 Creation: 2015/07/10
-Last Modified: 2017/02/20
-Version: 0.1
-Dependency : notif.<horizontalPosition>-<verticalPosition>-<FX>.css
+Last Modified: 2017/03/20
+Version: 1.0
+Dependency : watnotif.<horizontalPosition>-<verticalPosition>-<FX>.css
 Comment: Simplified the use (no need to configure position or style here, just embed a dedicated CSS file)
 */
 'use-strict';
@@ -28,7 +28,7 @@ Notif.prototype.getWrapper = function getWrapper() {
     if(!!document.getElementById('watnotif-wrapper')) 
         wrapperElem = document.getElementById('watnotif-wrapper');
     else {
-        wrapperElem = document.createElement('div');
+        wrapperElem    = document.createElement('div');
         wrapperElem.id = 'watnotif-wrapper';
         document.body.appendChild(wrapperElem);
     }
@@ -37,9 +37,9 @@ Notif.prototype.getWrapper = function getWrapper() {
 
 /* Creates en returns a notification DOM Element. */
 Notif.prototype.getBase = function getBase(classes, msg) {
-    var baseElem = document.createElement('div'),
-        closeBtn = document.createElement('button'),
-        msgElem = document.createElement('p');
+    var baseElem = document.createElement('div');
+    var closeBtn = document.createElement('button');
+    var msgElem  = document.createElement('p');
     (function(btn) { // Setting up the close button DOM Element.
         btn.setAttribute('type', 'button'); 
         btn.className = 'close-notif'; 
@@ -91,10 +91,12 @@ Notif.prototype.init = function init() {
 
 /* Displays the notification and binds the click and timer */
 Notif.prototype.display = function display(duration) {
-    var notifElem = this.getWrapper().insertBefore(this.getBase(this.type, this.message), this.getWrapper().firstChild), 
-        duration = duration || this.duration;
+    var notifElem = this.getWrapper().insertBefore(this.getBase(this.type, this.message), this.getWrapper().firstChild); 
+    var duration  = duration || this.duration;
     
-    setTimeout(function() { notifElem.className = notifElem.className.replace('inactive', ''); }, 10);
+    setTimeout(function() { // a very short timeout that ensures first CSS transistions handling by web browsers
+        notifElem.className = notifElem.className.replace('inactive', '');
+    }, 10);
     if(typeof duration !== 'undefined' && duration > 0) {
         var timer = new Notif.prototype.Timer(function() { notifElem.click(); }, duration);
         notifElem.addEventListener('mouseenter', function(e) {

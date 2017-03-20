@@ -1,47 +1,28 @@
-@import '../variables.less';
+@import '../variables.scss';
 
-@transition-duration : .15s;
-@transition-delay    : .5s;
+$transition-duration : .15s;
+$transition-delay    : .5s;
 
 // #watnotif-wrapper  > .notif {
-.effect() {
+@mixin effect {
 
 // BEGIN REGION "MATRIX TO POSITION ELSEWHERE THAN RIGHT TOP"
     // sadly, LESS is a bit limited so we can't truly dynamically set the transform matrix and have a crappy switch case
-    & when (@horizontal-position = right) {
-        @coeff-a: 1;
-        & when (@vertical-position = top) {
-            @coeff-d: 1;
-            .transform-matrix-mixin(@coeff-a, @coeff-d);
-        }
-        & when (@vertical-position = bottom) {
-            @coeff-d: -1;
-            .transform-matrix-mixin(@coeff-a, @coeff-d);
-        }
+    $coeff-a : 1;
+    $coeff-d : 1;
+    @if $horizontal-position == left {
+        $coeff-a : -1
     }
-    & when (@horizontal-position = left) {
-        @coeff-a: -1;
-        & when (@vertical-position = top) {
-            @coeff-d: 1;
-            .transform-matrix-mixin(@coeff-a, @coeff-d);
-        }
-        & when (@vertical-position = bottom) {
-            @coeff-d: -1;
-            .transform-matrix-mixin(@coeff-a, @coeff-d);
-        }
+    @if $vertical-position == bottom {
+        $coeff-d : -1;
     }
-    .transform-matrix-mixin(@a, @d) {
-        &, & > .notif {
-            transform: matrix(@a, 0, 0, @d, 0, 0);
-        }
+    &, & > .notif {
+        transform: matrix($coeff-a, 0, 0, $coeff-d, 0, 0);
     }
 // END REGION "MATRIX TO POSITION ELSEWHERE THAN RIGHT TOP"
 
 // BEGIN REGION "SPECIAL PROPERTIES FOR HORIZONTAL CENTERING"
-    & when (@horizontal-position = center) {
-        .centering-mixin();
-    }
-    .centering-mixin() {
+    @if $horizontal-position == center {
         .notif {
             top: 0 !important;
             margin-left: -25px !important;
@@ -56,15 +37,15 @@
 
 
     & > .notif {
-                right: -50px; 
+        right: -50px; 
         
         margin: 0 0 20px -50px; 
 
         border-radius: 0;
 
         transition-property: top, margin, width, right, border-radius;
-        transition-duration: @transition-duration;
-        transition-delay:  0s, 0s,  @transition-delay, @transition-delay, @transition-delay;
+        transition-duration: $transition-duration;
+        transition-delay:  0s, 0s,  $transition-delay, $transition-delay, $transition-delay;
         transition-timing-function: ease-out;
 
         &.inactive {
@@ -81,19 +62,19 @@
                 opacity: 0;
                 border-radius: 0;
                 transition-property: margin, opacity;
-                transition-duration: @transition-duration;
+                transition-duration: $transition-duration;
                 transition-delay: 0s;
                 transition-timing-function: ease-out;
             }
         }
         /* Mobile view */
-        @media (max-width: @mobile-max-width) {
+        @media (max-width: $mobile-max-width) {
             margin: 0;
             & > .close-notif {
                 opacity: .4;
                 transition-property: opacity;
-                transition-duration: @transition-duration;
-                transition-delay: @transition-delay;
+                transition-duration: $transition-duration;
+                transition-delay: $transition-delay;
             }
             &.inactive > .close-notif {
                 opacity: 0;

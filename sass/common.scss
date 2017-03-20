@@ -4,12 +4,12 @@
  * ===== HOW-TO USE THIS LESS FILE ========
  * 
  * You should only compile the LESS files in "prepared" folder. To explain how they work:
- *		- they define two variables: @vertical-position, @horizontal-position,
+ *		- they define two variables: $vertical-position, $horizontal-position,
  *		- they then import this file and the effect file they need.
  * 		- and ... That's it!
  */
 
-@import 'variables.less';
+@import 'variables.scss';
 
 #watnotif-wrapper {
 	box-sizing: border-box;
@@ -17,62 +17,59 @@
     
 	display: block;
 	width: 100%;
-	max-width: @notif-max-width;
+	max-width: $notif-max-width;
 	height: 0;
     
 	overflow: visible;
-	z-index: @notif-z-index;
+	z-index: $notif-z-index;
 
 	*, *:before, *:after {
 		box-sizing: border-box;
 	}
 
 // BEGIN REGION "VERTICAL POSITIONING" 
-	& when (@vertical-position = top) {
+	@if $vertical-position == top {
 		top: 20px;
-		@media (max-width: @mobile-max-width) {
+		@media (max-width: $mobile-max-width) {
 			top: 0;
 		}	
 	}
 
-	& when (@vertical-position = bottom) {
+	@if $vertical-position == bottom {
 		bottom: 20px;
 		transform: rotate(180deg);
-		& when(@horizontal-position = center) {
-			& > .notif {
-				transform: rotate(180deg);
-			}
+		& > .notif {
+			transform: rotate(180deg);
 		}
-		@media (max-width: @mobile-max-width) {
+		@media (max-width: $mobile-max-width) {
 			bottom: 0;
 		}
 	}
 // END REGION "VERTICAL POSITIONING" 
 
 // BEGIN REGION "HORIZONTAL POSITIONING" 
-	& when (@horizontal-position = left) {
+	@if $horizontal-position == left {
 		left: 10px;
-		@media(max-width: @mobile-max-width) {
+		@media(max-width: $mobile-max-width) {
 			left: 0;
 		}
 	}
-	& when (@horizontal-position = center) {
+	@if $horizontal-position == center {
 		left: 50%;
-		margin-left: @notif-max-width/2 - @notif-max-width;
-		@media (max-width: @mobile-max-width) {
+		margin-left: $notif-max-width/2 - $notif-max-width;
+		@media (max-width: $mobile-max-width) {
 			left: 0;
 		}
 	}
-	& when (@horizontal-position = right) {
+	@if $horizontal-position == right {
 		right: 20px;
-		@media(max-width: @mobile-max-width) {
+		@media(max-width: $mobile-max-width) {
 			right: 0;
 		}
 	}
 // END REGION "HORIZONTAL POSITIONING"
 
-
-	.effect();
+	@include effect;
 
 	& > .notif {
 		position: relative;
@@ -86,7 +83,7 @@
 
 		cursor: pointer;
 		color: #fff;
-		box-shadow: @notif-box-shadow;
+		box-shadow: $notif-box-shadow;
 		overflow: hidden;
 		opacity: 1;
         
@@ -101,7 +98,7 @@
 			padding: 10px;
 			text-align: center;
 			line-height: 30px;
-			font-family: @symbol-font, sans-serif;
+			font-family: $symbol-font, sans-serif;
 		}
 		& > .close-notif {
 			position: absolute;
@@ -156,31 +153,31 @@
     	/* Customisation of the background color of the notifications depending on their type */
 		&.confirmed {
 			&:before {
-				content: @confirmed-symbol;
+				content: $confirmed-symbol;
 			}
-			background: @confirmed-bg-color;
+			background: $confirmed-bg-color;
 		}
 		&.success {
 			&:before {
-				content: @success-symbol;
+				content: $success-symbol;
 			}
-			background: @success-bg-color;
+			background: $success-bg-color;
 		}
 		&.error {
 			&:before {
-				content: @error-symbol;
+				content: $error-symbol;
 			}
-			background: @error-bg-color;
+			background: $error-bg-color;
 		}
 		&.default {
 			&:before {
-				content: @default-symbol;
+				content: $default-symbol;
 			}
-			background: @default-bg-color;
+			background: $default-bg-color;
 			color: #333;
 		}
 	}
-	@media (max-width: @mobile-max-width) {
+	@media (max-width: $mobile-max-width) {
 		width: 100%;
 		max-width: 100%;
 		& > .notif {

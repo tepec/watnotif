@@ -1,9 +1,9 @@
-@import '../variables.less';
+@import '../variables.scss';
 
 @transition-duration : .15s;
 @transition-delay    : .1s;
 
-.effect() {
+@mixin effect {
     position: relative;     
     margin: 0 0 20px 0; 
     left: 0;
@@ -12,7 +12,7 @@
     opacity: 1;
 
     transition-property: width, left;
-    transition-duration: @transition-duration;
+    transition-duration: $transition-duration;
     transition-delay: 0s;
     transition-timing-function: ease-out;
 
@@ -22,8 +22,8 @@
         opacity: 1;
 
         transition-property: height, opacity, margin;
-        transition-duration: @transition-duration;
-        transition-delay: @transition-delay;
+        transition-duration: $transition-duration;
+        transition-delay: $transition-delay;
     }
     &.inactive {            
         width: 120%; 
@@ -49,8 +49,8 @@
             height: 50px;
 
             transition-property: left, width, opacity, height;
-            transition-duration: @transition-duration, @transition-duration, @transition-delay, @transition-duration;
-            transition-delay:  @transition-delay, @transition-delay, .25s, 0s;
+            transition-duration: $transition-duration, $transition-duration, $transition-delay, $transition-duration;
+            transition-delay:  $transition-delay, $transition-delay, .25s, 0s;
             transition-timing-function: linear;
             & > p {
                 opacity: 0;
@@ -58,21 +58,9 @@
                 margin: 0;
                 transition-property: opacity;
                 transition-delay: 0s;
-                transition-duration: @transition-duration;
+                transition-duration: $transition-duration;
                 transition-timing-function: ease-out;
             }
-        }
-    }
-    
-    @media(max-width: 450px) {
-        & > .close-notif {
-            opacity: .4;
-        }
-    }
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {  
-        & { 
-            transition: none; 
-            & > p { transition-delay: 0s; }
         }
     }
 }

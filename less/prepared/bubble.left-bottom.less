@@ -1,9 +1,5 @@
-@import '../common.less';
-@import '../effects/bubble-n-slide.less';
-@import '../positions/bottom.less';
-@import '../positions/left.less';
+@vertical-position: bottom;
+@horizontal-position: left;
 
-#watnotif-wrapper, 
-#watnofif-wrapper > .notif {
-    transform: matrix(-1,0,0,-1,0,0);
-}
+@import (reference) '../effects/bubble-n-slide.less';
+@import '../common.less';
