@@ -15,6 +15,11 @@ WatNotif is an elegant pure JS &amp; CSS stackable notifications plugin with con
 > * Create a module for notification center
 
 
+## To get WatNotif, download this repository from Github OR use bower 
+```
+bower install watnotif
+```
+
 ## 1. Include the stylesheet you want in the HTML head of the page.
 
 **Example:**
@@ -26,7 +31,7 @@ WatNotif is an elegant pure JS &amp; CSS stackable notifications plugin with con
     <meta charset="UTF-8" />
     
     <!-- the Notif stylesheet you choosed -->
-    <link rel="stylesheet" type="text/css" href="/path/to/notif.min.css" />
+    <link rel="stylesheet" type="text/css" href="/dist/css/<style you want>/<file you want>.min.css" />
     
     <!-- your own stylesheets -->
   </head>
@@ -60,7 +65,7 @@ You have to include only one of them depending on how you want to display the no
   <!-- your body -->
   
   <!-- the Notif plugin script -->
-  <script type="text/javascript" src="/path/to/notif.min.js"></script>
+  <script type="text/javascript" src="/dist/js/watnotif-1.0.min.js"></script>
   </body>
 </html>
 ```
