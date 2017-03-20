@@ -1,0 +1,32 @@
+{
+  "name": "watnotif",
+  "version": "1.0.0",
+  "description": "a pure JS & CSS stackable notifications plugin, with configurable timer, 'keep-on-hover' and 'close' built-in functionalities.",
+  "main": "dist/js/watnotif-1.0.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "new Notif(\"this is a test\", \"success\").display();"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tepec/watnotif.git"
+  },
+  "keywords": [
+    "front",
+    "notification",
+    "pure",
+    "js",
+    "less",
+    "sass",
+    "css",
+    "javascript"
+  ],
+  "author": "Rémi Carles",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tepec/watnotif/issues"
+  },
+  "homepage": "https://github.com/tepec/watnotif#readme"
+}
