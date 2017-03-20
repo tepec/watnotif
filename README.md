@@ -7,11 +7,12 @@ WatNotif is an elegant pure JS &amp; CSS stackable notifications plugin with con
 
 ## COMING SOON List 
 
-> * ~~Put at least a few demo/examples~~ [Done!]
-> * Add note on browser compatibility
-> * ~~Make this page prettier~~ [Done!]
-> * Create a module for notification center
 > * ~~Add a few more themes~~ [Done!]
+> * ~~Make this page prettier~~ [Done!]
+> * Add details on browser compatibility
+> * Add bower and node packages
+> * Rework on LESS files to make them more "modular"
+> * put SASS files
 > * Dedicated fonticon?
 
 ***
