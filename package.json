@@ -1,8 +1,9 @@
 {
   "name": "watnotif",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a pure JS & CSS stackable notifications plugin, with configurable timer, 'keep-on-hover' and 'close' built-in functionalities.",
   "main": "dist/js/watnotif-1.0.js",
+  "module": "dist/js/watnotif.mjs",
   "directories": {
     "example": "examples"
   },
